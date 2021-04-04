@@ -6,12 +6,21 @@ Created on Sat Apr  3 21:17:56 2021
 """
 from scipy import signal
 import matplotlib.pyplot as plt
+from sympy import *
+import sympy as sym
+
+
+s = symbols('s')
+'''
+
+G(s) = 50*(s+2)/(s**2 + 4*s + 100) / s
+
 
 '''
-    G(s) = 1 / (s+1)
-'''
-sys = signal.TransferFunction([1],[1,1])
+
+sys = signal.TransferFunction([50,100],[1,4,100,0])
 w, mag, phase = signal.bode(sys)
+
 
 plt.figure()
 plt.subplot(211)
